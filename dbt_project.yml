@@ -34,11 +34,11 @@ models:
   customer_model:
       struct:
         raw:
-          +schema: raw
+          
         staging:
-          +schema: stg
+          
         intermediate:
-          +schema: int
+          
         marts:
           +schema: core
       
