@@ -7,7 +7,7 @@ version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project. For dbt Cloud,
 # you can leave this as "default"
-profile: 'default'
+profile: 'customer_model'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -32,6 +32,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   customer_model:
-      # Applies to all files under models/example/
-      example:
-          materialized: table
+      struct:
+        raw:
+          +schema: raw
+        staging:
+          +schema: stg
+        intermediate:
+          +schema: int
+        marts:
+          +schema: core
+      
+  
