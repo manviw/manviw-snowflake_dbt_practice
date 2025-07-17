@@ -1,5 +1,5 @@
 SELECT 
     CUSTOMER_ID,
     SUM(TOTAL_ORDERS) AS CUST_TOTAL_ORDERS
-FROM {{REF('customers')}}
+FROM {{ref('customer')}}
 GROUP BY CUSTOMER_ID
